@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fjord+One|Roboto');
+
 * {
   margin: 0;
   padding: 0;
@@ -137,8 +139,26 @@ ul, ol { list-style: none; }
   font-size: 0.8em;
 }
 
-main.content-container {
+.cards-container {
   width: 96.5%;
   margin: 20px auto;
+  min-height: calc(100vh - 40px);
   background-color: rgba(255, 255, 255, 0.13);
 }
+
+.cards-container .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 20px 20px;
+}
+
+.cards-container .flex-container .card {
+  padding: 20px;
+  margin: 20px auto 0 0;
+  background-color: #fff;
+  flex-basis: calc(33.333333% - 20px);
+}
+
+.cards-container .flex-container .card h3 { float: left; font-size: 1.15em; }
+.cards-container .flex-container .card i { float: right; color: #be5353; cursor: pointer;}
+.cards-container .flex-container .card p { clear: both; padding-top: 5px; font-family: "Fjord One"; }
