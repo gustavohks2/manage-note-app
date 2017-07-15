@@ -8,8 +8,10 @@
 
   function toggleNav() {
     if(!sidebar.classList.contains("active")) {
+      menuButton.classList.toggle("active");
       sidebar.classList.toggle("active");
     }else {
+      menuButton.classList.toggle("active");
       sidebar.classList.toggle("active");
     }
   }
