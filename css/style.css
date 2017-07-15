@@ -33,11 +33,13 @@ ul, ol { list-style: none; }
 .menu-button {
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  position: absolute;
+  transition: all .4s ease-in-out;
+  position: fixed;
   cursor: pointer;
   display: none;
   height: 50px;
   width: 50px;
+  z-index: 1;
   left: 0;
   top: 0;
 }
@@ -69,8 +71,18 @@ ul, ol { list-style: none; }
 .menu-button > div:before { top: -9px; }
 .menu-button > div:after { top: 9px; }
 
+.menu-button.active { left: calc(100% - 50px); background: transparent; box-shadow: none; }
+.menu-button.active > div { background: rgba(0, 0, 0, 0); }
+
+.menu-button.active > div:before,
+.menu-button.active > div:after { background: #fff; }
+
+.menu-button.active > div:before { transform: rotate(45deg); top: 0px}
+.menu-button.active > div:after { transform: rotate(-45deg); top: 0px}
+
 .right-control-panel {
   box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
+  transition: all .4s ease-in-out;
   flex-direction: column;
   align-items: center;
   background: #f7f7f7;
@@ -232,7 +244,25 @@ ul, ol { list-style: none; }
 @media only screen and (max-width: 560px) {
   body { padding-left: 0; }
 
-  .menu-button { display: block; }
-  .right-control-panel { left: -100%; height: 0vh; }
+  .menu-button { display: block; position: absolute;}
+  .right-control-panel {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    left: -100%;
+    right: 0;
+    top: 0;
+  }
+
+  .right-control-panel nav li a {
+    text-indent: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-control-panel.active {
+    left: 0;
+    height: 700px;
+  }
   .cards-container { margin: 20px auto 20px auto; }
 }
