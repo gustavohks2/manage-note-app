@@ -174,18 +174,13 @@ ul, ol { list-style: none; }
   position: absolute;
   border-radius: 50%;
   top: -2px;
-  left: -10px;
+  left: -13px;
   width: 125%;
-  z-index: -2;
   height: 110%;
   opacity: 0;
   border: 1px solid #333;
+  -webkit-animation: pulse 1s linear infinite;
   animation: pulse 1s linear infinite;
-}
-
-@keyframes pulse {
-  from { opacity: 0.4; transform: scale(0.7);}
-  to { opacity: 0; transform: scale(1.4);}
 }
 
 .right-control-panel footer {
@@ -242,6 +237,16 @@ ul, ol { list-style: none; }
 .cards-container .flex-container .card h3 { float: left; font-size: 1.15em; }
 .cards-container .flex-container .card i { float: right; color: #be5353; cursor: pointer;}
 .cards-container .flex-container .card p { clear: both; padding-top: 5px; font-family: "Fjord One"; }
+
+@-webkit-keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.8);}
+  to { opacity: 0; transform: scale(1.4);}
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.8);}
+  to { opacity: 0; transform: scale(1.4);}
+}
 
 @media only screen and (min-width: 1366px) {
   .cards-container .flex-container::after { margin-left: 25%; }
