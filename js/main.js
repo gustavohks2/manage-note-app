@@ -1,8 +1,9 @@
 // Toggle sidebar with menu button on click
 
+var menuButton = document.querySelector("#menu-button");
+var sidebar = document.querySelector("#sidebar");
+
 (function() {
-  var menuButton = document.querySelector("#menu-button");
-  var sidebar = document.querySelector("#sidebar");
 
   menuButton.addEventListener("click", toggleNav);
 
