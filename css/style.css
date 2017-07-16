@@ -163,8 +163,29 @@ ul, ol { list-style: none; }
   width: 50px;
   height: 60px;
   margin: auto;
+  z-index: 99;
   cursor: pointer;
+  position: relative;
   background: url("../img/add-card-icon.png") no-repeat center / 100% 100%;
+}
+
+.right-control-panel .add-card-icon:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: -2px;
+  left: -10px;
+  width: 125%;
+  z-index: -2;
+  height: 110%;
+  opacity: 0;
+  border: 1px solid #333;
+  animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.7);}
+  to { opacity: 0; transform: scale(1.4);}
 }
 
 .right-control-panel footer {
