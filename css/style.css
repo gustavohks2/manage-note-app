@@ -253,11 +253,22 @@ ul, ol { list-style: none; }
   visibility: hidden;
   position: absolute;
   min-height: 300px;
-  overflow: hidden;
   padding: 25px;
   width: 37%;
   left: 50%;
   top: 50%;
+}
+
+.popup-add-card-form i.fa-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  padding: 8px;
+  color: #be5353;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .popup-add-card-form input[type="text"] { font-size: 1.15em; font-weight: 800; color: #333;}
