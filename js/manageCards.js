@@ -12,6 +12,9 @@ var addCardPopup = document.querySelector("#add-card-popup");
   }
 
   this.refreshCards = function() {
+
+    cardTemplate = "";
+    
     cardsList.forEach(function(card) {
       cardTemplate += '<div class="card" data-target="">';
       cardTemplate +=   '<h3>' + card.title + '</h3>';
