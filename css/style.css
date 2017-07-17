@@ -236,7 +236,14 @@ ul, ol { list-style: none; }
 
 .cards-container .flex-container .card h3 { float: left; font-size: 1.15em; color: #333; width: 90%;}
 .cards-container .flex-container .card i { float: right; color: #be5353; cursor: pointer;}
-.cards-container .flex-container .card p { clear: both; padding-top: 5px; font-family: "Fjord One"; }
+.cards-container .flex-container .card p {
+  clear: both;
+  padding-top: 5px;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: "Fjord One";
+  overflow-wrap: break-word;
+}
 
 .popup-add-card-form {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
