@@ -7,14 +7,14 @@ var addCardPopup = document.querySelector("#add-card-popup");
 (function Cards(cardsList){
   this.init = function() {
     this.refreshCards();
-    this.openAddCardPopup();
+    this.toggleAddCardsPopup();
     this.addCard();
   }
 
   this.refreshCards = function() {
 
     cardTemplate = "";
-    
+
     cardsList.forEach(function(card) {
       cardTemplate += '<div class="card" data-target="">';
       cardTemplate +=   '<h3>' + card.title + '</h3>';
@@ -27,12 +27,12 @@ var addCardPopup = document.querySelector("#add-card-popup");
     cardsBox.innerHTML = cardTemplate;
   }
 
-  this.openAddCardPopup = function() {
-    function openPopup() {
-      addCardPopup.style.visibility = "visible";
-    }
+  this.toggleAddCardsPopup = function() {
+    function openPopup() { addCardPopup.style.visibility = "visible"; }
+    function closePopup() { addCardPopup.style.visibility = "hidden"; }
 
     document.querySelector("#add-card").addEventListener("click", openPopup);
+    document.querySelector("#close-popup-btn").addEventListener("click", closePopup);
   }
 
   this.addCard = function() {
