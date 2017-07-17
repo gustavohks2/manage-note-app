@@ -1,12 +1,14 @@
-var cardsList = [
-  {title: "Party at Thomas' house", content: "Buy a gift for Thomas, and clean my car before I go"}
-];
+var cardsList = [];
+
 var cardTemplate = "";
 var cardsBox = document.querySelector("#cards-box");
+var addCardPopup = document.querySelector("#add-card-popup");
 
 (function Cards(cardsList){
   this.init = function() {
     this.refreshCards();
+    this.openAddCardPopup();
+    this.addCard();
   }
 
   this.refreshCards = function() {
@@ -18,7 +20,35 @@ var cardsBox = document.querySelector("#cards-box");
       cardTemplate += '</div>';
     });
 
+    cardsBox.innerHTML = "";
     cardsBox.innerHTML = cardTemplate;
+  }
+
+  this.openAddCardPopup = function() {
+    function openPopup() {
+      addCardPopup.style.visibility = "visible";
+    }
+
+    document.querySelector("#add-card").addEventListener("click", openPopup);
+  }
+
+  this.addCard = function() {
+
+    function getNoteData() {
+      var title = document.querySelector("#title").value;
+      var description = document.querySelector("#description").value;
+
+      document.querySelector("#add-card-form").reset();
+      cardsList.push({title: title, content: description});
+
+      addCardPopup.style.visibility = "hidden";
+      refreshCards();
+    }
+
+    document.querySelector("#add-card-form").addEventListener("submit", function(evt) {
+      evt.preventDefault();
+      getNoteData();
+    });
   }
 
   this.init();
