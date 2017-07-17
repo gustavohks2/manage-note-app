@@ -5,12 +5,14 @@ var cardsBox = document.querySelector("#cards-box");
 var addCardPopup = document.querySelector("#add-card-popup");
 
 (function Cards(cardsList){
+  // Initialize all notes/cards management functions/properties
   this.init = function() {
     this.refreshCards();
     this.toggleAddCardsPopup();
     this.addCard();
   }
 
+  // Update the actual state of all cards in the cards container
   this.refreshCards = function() {
 
     cardTemplate = "";
@@ -27,6 +29,7 @@ var addCardPopup = document.querySelector("#add-card-popup");
     cardsBox.innerHTML = cardTemplate;
   }
 
+  // Open or close popup to add a new note/card
   this.toggleAddCardsPopup = function() {
     function openPopup() { addCardPopup.style.visibility = "visible"; }
     function closePopup() { addCardPopup.style.visibility = "hidden"; }
@@ -35,17 +38,31 @@ var addCardPopup = document.querySelector("#add-card-popup");
     document.querySelector("#close-popup-btn").addEventListener("click", closePopup);
   }
 
+  // Add a new card to the document
   this.addCard = function() {
 
     function getNoteData() {
       var title = document.querySelector("#title").value;
       var description = document.querySelector("#description").value;
+      var cardElements = [title, description];
 
-      document.querySelector("#add-card-form").reset();
-      cardsList.push({title: title, content: description});
+      if(validate(cardElements)) {
+        document.querySelector("#add-card-form").reset();
+        cardsList.push({title: title, content: description});
+        addCardPopup.style.visibility = "hidden";
+        refreshCards();
+      }else {
+        console.log("Error");
+      }
+    }
 
-      addCardPopup.style.visibility = "hidden";
-      refreshCards();
+    this.validate = function(elements) {
+      for(let i = 0; i < elements.length; i++) {
+        if(!elements[i] == "") {
+          return true;
+        }
+        return false;
+      }
     }
 
     document.querySelector("#add-card-form").addEventListener("submit", function(evt) {
@@ -54,5 +71,8 @@ var addCardPopup = document.querySelector("#add-card-popup");
     });
   }
 
+
+
+  // Starts the init function
   this.init();
 })(cardsList);
