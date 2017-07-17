@@ -234,9 +234,58 @@ ul, ol { list-style: none; }
   flex-basis: calc(33.333333% - 10px);
 }
 
-.cards-container .flex-container .card h3 { float: left; font-size: 1.15em; }
+.cards-container .flex-container .card h3 { float: left; font-size: 1.15em; color: #333; width: 90%;}
 .cards-container .flex-container .card i { float: right; color: #be5353; cursor: pointer;}
 .cards-container .flex-container .card p { clear: both; padding-top: 5px; font-family: "Fjord One"; }
+
+.popup-add-card-form {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  visibility: hidden;
+  position: absolute;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 25px;
+  width: 37%;
+  left: 50%;
+  top: 50%;
+}
+
+.popup-add-card-form input[type="text"] { font-size: 1.15em; font-weight: 800; color: #333;}
+
+.popup-add-card-form input[type="text"],
+.popup-add-card-form textarea {
+  max-width: 100%;
+  max-height: 350px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup-add-card-form input[type="text"],
+.popup-add-card-form textarea,
+.popup-add-card-form button {
+  width: 100%;
+  padding: 15px;
+}
+
+.popup-add-card-form button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  background: #de5385; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #de5385 0%, #276189 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #de5385 0%,#276189 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #de5385 0%,#276189 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de5385', endColorstr='#276189',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.popup-add-card-form button:after {
+  content: "\f249";
+  margin-left: 10px;
+  color: inherit;
+  font-family: FontAwesome;
+}
 
 @-webkit-keyframes pulse {
   from { opacity: 0.4; transform: scale(0.8);}
@@ -265,6 +314,7 @@ ul, ol { list-style: none; }
   .cards-container .flex-container .card {
     flex-basis: calc(100% - 10px);
   }
+  .popup-add-card-form { width: 50%; }
 }
 
 @media only screen and (max-width: 560px) {
@@ -291,4 +341,6 @@ ul, ol { list-style: none; }
     height: 700px;
   }
   .cards-container { margin: 20px auto 20px auto; }
+
+  .popup-add-card-form { width: 90%; height: 320px; min-width: 250px;}
 }
