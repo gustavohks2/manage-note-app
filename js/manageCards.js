@@ -27,6 +27,11 @@ var addCardPopup = document.querySelector("#add-card-popup");
 
     cardsBox.innerHTML = "";
     cardsBox.insertAdjacentHTML("afterbegin", cardTemplate);
+    if(cardsList.length <= 0) {
+      cardsBox.parentNode.classList.toggle("isEmpty");
+    }else {
+      cardsBox.parentNode.classList.remove("isEmpty");
+    }
     deleteCard();
   }
 
