@@ -41,6 +41,7 @@ var addCardPopup = document.querySelector("#add-card-popup");
     function closePopup() { addCardPopup.style.visibility = "hidden"; }
 
     document.querySelector("#add-card").addEventListener("click", openPopup);
+    document.querySelector("#add-new-card-btn").addEventListener("click", openPopup);
     document.querySelector("#close-popup-btn").addEventListener("click", closePopup);
   }
 
