@@ -17,16 +17,17 @@ var addCardPopup = document.querySelector("#add-card-popup");
 
     cardTemplate = "";
 
-    cardsList.forEach(function(card) {
-      cardTemplate += '<div class="card" data-target="">';
+    cardsList.forEach(function(card, i) {
+      cardTemplate += '<div class="card">';
       cardTemplate +=   '<h3>' + card.title + '</h3>';
-      cardTemplate +=   '<i class="fa fa-close fa-lg close-button"></i>';
+      cardTemplate +=   '<i class="fa fa-close fa-lg close-button" data-target="' + i +'"></i>';
       cardTemplate +=   '<p>' + card.content + '</p>';
       cardTemplate += '</div>';
     });
 
     cardsBox.innerHTML = "";
-    cardsBox.innerHTML = cardTemplate;
+    cardsBox.insertAdjacentHTML("afterbegin", cardTemplate);
+    deleteCard();
   }
 
   // Open or close popup to add a new note/card
@@ -71,7 +72,18 @@ var addCardPopup = document.querySelector("#add-card-popup");
     });
   }
 
+  this.deleteCard = function() {
+    var cardCloseBtn = document.querySelectorAll(".close-button");
+    function deleteClickedCard(clickedCard) {
+      var cardId = parseInt(clickedCard.getAttribute("data-target"));
+      cardsList.splice(cardId, 1);
+      refreshCards();
+    }
 
+    cardCloseBtn.forEach(function(cardItem) {
+      cardItem.addEventListener("click", function() { deleteClickedCard(this); });
+    });
+  }
 
   // Starts the init function
   this.init();
