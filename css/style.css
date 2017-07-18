@@ -39,7 +39,7 @@ ul, ol { list-style: none; }
   display: none;
   height: 50px;
   width: 50px;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
 }
@@ -89,6 +89,7 @@ ul, ol { list-style: none; }
   overflow: hidden;
   position: fixed;
   display: flex;
+  z-index: 1;
   height: 100vh;
   width: 290px;
   left: 0;
@@ -222,7 +223,6 @@ ul, ol { list-style: none; }
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: rgba(255, 2555, 255, 0.2);
   font-size: 2.4em;
-
 }
 
 .cards-container.isEmpty .empty-state {
@@ -232,7 +232,7 @@ ul, ol { list-style: none; }
   transform: translate(-50%, -50%);
   position: absolute;
   border-radius: 50%;
-  min-height: 100px;
+  min-height: 100px;  
   cursor: pointer;
   display: flex;
   width: 100px;
@@ -248,7 +248,7 @@ ul, ol { list-style: none; }
   padding: 0 0 10px 10px;
 }
 
-.cards-container .flex-container::after {
+.cards-container .flex-container:after {
   content:"";
   display: block;
   margin-left: 33.33%;
@@ -279,6 +279,7 @@ ul, ol { list-style: none; }
   border-radius: 10px;
   visibility: hidden;
   position: absolute;
+  z-index: 2;
   min-height: 300px;
   padding: 25px;
   width: 37%;
