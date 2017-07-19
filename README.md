@@ -1,6 +1,6 @@
 # Manage Notes Application
-  Application intended to be used as a notes/cards/postits manager
-  Take a look at a hosted version
+  Application intended to be used as a notes/cards/postits manager. <br/>
+  Take a look at a <strong>hosted version</strong>: https://gustavohks2.github.io/manage-note-app/
 # First screenshot of the page in a large device
 ![screenshot of the page in a large device](http://res.cloudinary.com/dq5anctrd/image/upload/v1500423569/print1_jex0xo.png)
 
