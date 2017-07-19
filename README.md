@@ -1,5 +1,6 @@
 # Manage Notes Application
   Application intended to be used as a notes/cards/postits manager
+  Take a look at a hosted version
 # First screenshot of the page in a large device
 ![screenshot of the page in a large device](http://res.cloudinary.com/dq5anctrd/image/upload/v1500423569/print1_jex0xo.png)
 
